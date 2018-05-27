@@ -2,11 +2,11 @@
 
 This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed)
 
-As [ALEXA list is not freely provided anymore](https://blog.majestic.com/development/alexa-top-1-million-sites-retired-heres-majestic-million/), the [CISCO Umbrella Popularity List](http://s3-us-west-1.amazonaws.com/umbrella-static/index.html) is used.
+As [ALEXA list is not freely provided anymore](https://twitter.com/paul_pearce/status/800780539204538370), the [CISCO Umbrella Popularity List](http://s3-us-west-1.amazonaws.com/umbrella-static/index.html) is used.
 
 Python portage has been created in order to be able to build the dictionary on Windows/Linux/Mac.
 
-To resume, the script generate a dictionary containing the most common **DISALLOW** clauses from **robots.txt** file found on CISCO Top 1 million sites.
+To resume, the script generate a dictionary containing the most common **DISALLOW** clauses from [robots.txt](https://moz.com/learn/seo/robotstxt) file found on CISCO Top 1 million sites.
 
 The built dictionary can then be used used with this [discovery tool](https://github.com/maurosoria/dirsearch) to find hidden content on a target web site.
 
