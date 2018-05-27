@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/righettod/robots-disallowed-dict-builder.svg?branch=master)](https://travis-ci.org/righettod/robots-disallowed-dict-builder)
+
 # Objective
 
 This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed)
