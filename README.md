@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/righettod/robots-disallowed-dict-builder.svg?branch=master)](https://travis-ci.org/righettod/robots-disallowed-dict-builder)
 
+[![Requirements Status](https://requires.io/github/righettod/robots-disallowed-dict-builder/requirements.svg?branch=master)](https://requires.io/github/righettod/robots-disallowed-dict-builder/requirements/?branch=master)
+
 # Objective
 
 This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed).
