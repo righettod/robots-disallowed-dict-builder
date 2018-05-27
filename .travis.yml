@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.7-dev"
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y wget unzip
+install:
+  - pip install -r requirements.txt
+script:
+  - wget http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
+  - unzip top-1m.csv.zip
+  - python dict_builder.py -n 10000 -t 20 -f top-1m.csv -m 5

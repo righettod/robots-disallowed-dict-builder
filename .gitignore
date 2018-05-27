@@ -1,0 +1,4 @@
+*.csv
+work/
+.idea/
+disallowed_entries_dict.txt
