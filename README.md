@@ -2,7 +2,7 @@
 
 # Objective
 
-This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed)
+This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed).
 
 As [ALEXA list is not freely provided anymore](https://twitter.com/paul_pearce/status/800780539204538370), the [CISCO Umbrella Popularity List](http://s3-us-west-1.amazonaws.com/umbrella-static/index.html) is used.
 
@@ -23,7 +23,7 @@ $ python --version
 Python 3.5.3
 ```
 
-# Python dependencies
+## Python dependencies
 
 Install dependencies packages using the following command:
 
@@ -68,3 +68,8 @@ $ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3
 [*] Gather the information and build the final dictionary...
 [!] Dictionary built in file 'disallowed_entries_dict.txt' (217 entries).
 ```
+
+# References
+
+* https://blog.majestic.com/development/alexa-top-1-million-sites-retired-heres-majestic-million/
+* http://s3-us-west-1.amazonaws.com/umbrella-static/index.html
