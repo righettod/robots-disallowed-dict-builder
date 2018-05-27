@@ -13,4 +13,4 @@ install:
 script:
   - wget http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
   - unzip top-1m.csv.zip
-  - python dict_builder.py -n 100 -t 10 -f top-1m.csv -m 5
+  - travis_wait 15 python dict_builder.py -n 20 -t 5 -f top-1m.csv -m 5
