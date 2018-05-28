@@ -57,13 +57,13 @@ def download_robots_file_content(base_url):
     robots_content = None
     try:
         target_url = "http://" + base_url + "/robots.txt"
-        response = requests.get(target_url, headers=HEADERS, allow_redirects=False, verify=False)
+        response = requests.get(target_url, headers=HEADERS, allow_redirects=False, verify=False, timeout=5)
         if response.status_code == 200:
             robots_content = response.text
     except:
         try:
             target_url = "https://" + base_url + "/robots.txt"
-            response = requests.get(target_url, headers=HEADERS, allow_redirects=False, verify=False)
+            response = requests.get(target_url, headers=HEADERS, allow_redirects=False, verify=False, timeout=5)
             if response.status_code == 200:
                 robots_content = response.text
         except:
