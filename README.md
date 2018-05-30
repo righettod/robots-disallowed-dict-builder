@@ -78,7 +78,8 @@ Run the following command to build a dictionary using the [MAJESTIC Top 1 millio
 ```shell
 # Download the MAJESTIC Top 1 million sites CSV file
 $ wget http://downloads.majestic.com/majestic_million.csv
-# Transform the downloaded file to an input source that use the same format than the CISCO Top 1 million sites CSV file
+# Transform the downloaded file to an input source that use the same format 
+# than the CISCO Top 1 million sites CSV file
 $ cat majestic_million.csv | awk -F  "," 'NR>1 {print $1 "," $3}' > input.csv
 # Run a generation using the CSV file
 $ python dict_builder.py -n 100 -t 5 -f input.csv -m 3
