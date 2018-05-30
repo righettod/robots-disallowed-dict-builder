@@ -6,7 +6,7 @@
 
 This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed).
 
-As [ALEXA list is not freely provided anymore](https://twitter.com/paul_pearce/status/800780539204538370), the [CISCO Umbrella Popularity List](http://s3-us-west-1.amazonaws.com/umbrella-static/index.html) is used.
+As [ALEXA list is not freely provided anymore](https://twitter.com/paul_pearce/status/800780539204538370), the [CISCO Umbrella Popularity List](http://s3-us-west-1.amazonaws.com/umbrella-static/index.html) is used (information is also provided to use the [MAJESTIC Million CSV](https://blog.majestic.com/development/majestic-million-csv-daily/)).
 
 Python portage has been created in order to be able to build the dictionary on Windows/Linux/Mac.
 
