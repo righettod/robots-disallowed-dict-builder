@@ -20,7 +20,7 @@ The built dictionary can then be used used with this [discovery tool](https://gi
 
 The script need **Python** version **>= 3.5.3**.
 
-```
+```shell
 $ python --version
 Python 3.5.3
 ```
@@ -29,8 +29,8 @@ Python 3.5.3
 
 Install dependencies packages using the following command:
 
-```
-pip install -r requirements.txt
+```shell
+$ pip install -r requirements.txt
 ```
 
 # Build a dictionary
@@ -57,7 +57,7 @@ optional arguments:
 
 Run the following command to build a dictionary:
 
-```
+```shell
 # Download the CISCO Top 1 million sites archive
 $ wget http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
 # Uncompress it to have access to the CSV file
@@ -69,6 +69,20 @@ $ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3
 ................................................................
 [*] Gather the information and build the final dictionary...
 [!] Dictionary built in file 'disallowed_entries_dict.txt' (217 entries).
+```
+
+# Use MAJESTIC sites list instead of the CISCO one
+
+Run the following command to build a dictionary using the [MAJESTIC Top 1 million sites list](https://blog.majestic.com/development/majestic-million-csv-daily/):
+
+```shell
+# Download the MAJESTIC Top 1 million sites CSV file
+$ wget http://downloads.majestic.com/majestic_million.csv
+# Transform the downloaded file to an input source that use the same format than the CISCO Top 1 million sites CSV file
+$ cat majestic_million.csv | awk -F  "," 'NR>1 {print $1 "," $3}' > input.csv
+# Run a generation using the CSV file
+$ python dict_builder.py -n 100 -t 5 -f input.csv -m 3
+...
 ```
 
 # References
