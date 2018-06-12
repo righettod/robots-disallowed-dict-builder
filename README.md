@@ -2,6 +2,8 @@
 
 [![Requirements Status](https://requires.io/github/righettod/robots-disallowed-dict-builder/requirements.svg?branch=master)](https://requires.io/github/righettod/robots-disallowed-dict-builder/requirements/?branch=master)
 
+[![Known Vulnerabilities](https://snyk.io/test/github/righettod/robots-disallowed-dict-builder/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/righettod/robots-disallowed-dict-builder?targetFile=requirements.txt)
+
 # Objective
 
 This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed).
