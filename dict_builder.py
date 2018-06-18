@@ -84,7 +84,7 @@ if __name__ == "__main__":
     if os.path.exists(WORK_TEMP_FOLDER):
         shutil.rmtree(WORK_TEMP_FOLDER)
     os.mkdir(WORK_TEMP_FOLDER)
-    print(colored("[*] Process the first %s sites available from the CISCO sites using %s threads en parallel..." % (args.site_limit, args.worker_thread_max), "cyan", attrs=[]))
+    print(colored("[*] Process the first %s sites available from the CISCO sites using %s threads in parallel..." % (args.site_limit, args.worker_thread_max), "cyan", attrs=[]))
     with open(args.site_file_path, "r") as f:
         csv_lines = f.readlines()
     with ThreadPoolExecutor(max_workers=args.worker_thread_max) as executor:
