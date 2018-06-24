@@ -8,10 +8,11 @@ CISCO Umbrella Popularity List:
     http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
 
 Dependencies:
-    pip install requests termcolor colorama
+    pip install requests urllib3 termcolor colorama
 """
 
 import requests
+import urllib3
 import colorama
 import argparse
 import hashlib
@@ -20,12 +21,12 @@ import shutil
 import os
 from termcolor import colored
 from concurrent.futures.thread import ThreadPoolExecutor
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
 
 # Constants
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Firefox/42.0"}
 WORK_TEMP_FOLDER = "work"
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 def process_site(url, work_folder):
@@ -79,11 +80,17 @@ if __name__ == "__main__":
     parser.add_argument('-n', action="store", dest="site_limit", default=1000000, type=int, help="Maximum number of sites to process of the CISCO sites list.")
     parser.add_argument('-t', action="store", dest="worker_thread_max", default=5, type=int, help="Maximum number of parallel threads to use to process the CISCO sites list.")
     parser.add_argument('-m', action="store", dest="disallow_entry_min_occurrence", type=int, default=1, help="Minimum number of occurrence for a DISALLOW entry to be kept in the built dictionary.")
+    parser.add_argument('-a', action="store", dest="user_agent", default=None, help="Value of the header 'User-Agent' to use in every HTTP request.")
     args = parser.parse_args()
     print(colored("[*] Initialization...", "cyan", attrs=[]))
+    print("  Reset temporary working folder '%s'..." % WORK_TEMP_FOLDER)
     if os.path.exists(WORK_TEMP_FOLDER):
         shutil.rmtree(WORK_TEMP_FOLDER)
     os.mkdir(WORK_TEMP_FOLDER)
+    print("  Temporary working folder ready.")
+    if args.user_agent is not None:
+        HEADERS["User-Agent"] = args.user_agent
+    print("  User-Agent set to '%s'." % HEADERS["User-Agent"])
     print(colored("[*] Process the first %s sites available from the CISCO sites using %s threads in parallel..." % (args.site_limit, args.worker_thread_max), "cyan", attrs=[]))
     with open(args.site_file_path, "r") as f:
         csv_lines = f.readlines()

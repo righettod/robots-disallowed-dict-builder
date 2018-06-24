@@ -43,7 +43,7 @@ Run the following command to get the command line options:
 $ python dict_builder.py -h
 usage: dict_builder.py [-h] -f SITE_FILE_PATH [-n SITE_LIMIT]
                        [-t WORKER_THREAD_MAX]
-                       [-m DISALLOW_ENTRY_MIN_OCCURRENCE]
+                       [-m DISALLOW_ENTRY_MIN_OCCURRENCE] [-a USER_AGENT]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -55,6 +55,8 @@ optional arguments:
                         Maximum number of parallel threads to use to process the CISCO sites list.
   -m DISALLOW_ENTRY_MIN_OCCURRENCE
                         Minimum number of occurrence for a DISALLOW entry to be kept in the built dictionary.
+  -a USER_AGENT         
+                        Value of the header 'User-Agent' to use in every HTTP request.                        
 ```
 
 Run the following command to build a dictionary:
@@ -65,8 +67,11 @@ $ wget http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
 # Uncompress it to have access to the CSV file
 $ unzip top-1m.csv.zip
 # Run a generation using the CSV file
-$ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3
+$ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3 -a "Mozilla/5.0"
 [*] Initialization...
+  Reset temporary working folder 'work'...
+  Temporary working folder ready.
+  User-Agent set to 'Mozilla/5.0'.
 [*] Process the first 100 sites available from the CISCO sites using 5 threads en parallel...
 ................................................................
 [*] Gather the information and build the final dictionary...
