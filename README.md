@@ -44,6 +44,7 @@ $ python dict_builder.py -h
 usage: dict_builder.py [-h] -f SITE_FILE_PATH [-n SITE_LIMIT]
                        [-t WORKER_THREAD_MAX]
                        [-m DISALLOW_ENTRY_MIN_OCCURRENCE] [-a USER_AGENT]
+                       [-e EXCLUSION_FILE_PATH]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -54,9 +55,12 @@ optional arguments:
   -t WORKER_THREAD_MAX  
                         Maximum number of parallel threads to use to process the CISCO sites list.
   -m DISALLOW_ENTRY_MIN_OCCURRENCE
-                        Minimum number of occurrence for a DISALLOW entry to be kept in the built dictionary.
+                        Minimum number of occurrence for a DISALLOW entry to
+                        be kept in the built dictionary.
   -a USER_AGENT         
-                        Value of the header 'User-Agent' to use in every HTTP request.                        
+                        Value of the header 'User-Agent' to use in every HTTP request.
+  -e EXCLUSION_FILE_PATH
+                        Location to the text file containing sites to exclude from processing.                    
 ```
 
 Run the following command to build a dictionary:
@@ -72,11 +76,27 @@ $ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3 -a "Mozilla/5.0"
   Reset temporary working folder 'work'...
   Temporary working folder ready.
   User-Agent set to 'Mozilla/5.0'.
+  No exclusion file specified so all sites will be processed.
 [*] Process the first 100 sites available from the CISCO sites using 5 threads en parallel...
 ................................................................
 [*] Gather the information and build the final dictionary...
 [!] Dictionary built in file 'disallowed_entries_dict.txt' (217 entries).
 ```
+
+# Exclude sites from the processing
+
+The `-e` option can be used to specify a text file containing a list of sites to ignore (one site by line).
+
+Example of content for the exclusion file:
+
+````
+prod.netflix.com
+push.prod.netflix.com
+doubleclick.net
+g.doubleclick.net
+````
+
+The file `exclusions.txt` is provided with sites identified as malicious and, so, that should be ignored.
 
 # Use MAJESTIC sites list instead of the CISCO one
 

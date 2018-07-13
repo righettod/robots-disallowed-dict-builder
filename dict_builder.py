@@ -75,12 +75,14 @@ def download_robots_file_content(base_url):
 
 if __name__ == "__main__":
     colorama.init()
+    sites_to_ignore = []
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', action="store", dest="site_file_path", default="top-1m.csv", help="Location to the CSV file of the CISCO Top 1 million sites.", required=True)
     parser.add_argument('-n', action="store", dest="site_limit", default=1000000, type=int, help="Maximum number of sites to process of the CISCO sites list.")
     parser.add_argument('-t', action="store", dest="worker_thread_max", default=5, type=int, help="Maximum number of parallel threads to use to process the CISCO sites list.")
     parser.add_argument('-m', action="store", dest="disallow_entry_min_occurrence", type=int, default=1, help="Minimum number of occurrence for a DISALLOW entry to be kept in the built dictionary.")
     parser.add_argument('-a', action="store", dest="user_agent", default=None, help="Value of the header 'User-Agent' to use in every HTTP request.")
+    parser.add_argument('-e', action="store", dest="exclusion_file_path", default=None, help="Location to the text file containing sites to exclude from processing.")
     args = parser.parse_args()
     print(colored("[*] Initialization...", "cyan", attrs=[]))
     print("  Reset temporary working folder '%s'..." % WORK_TEMP_FOLDER)
@@ -91,6 +93,13 @@ if __name__ == "__main__":
     if args.user_agent is not None:
         HEADERS["User-Agent"] = args.user_agent
     print("  User-Agent set to '%s'." % HEADERS["User-Agent"])
+    if args.exclusion_file_path is not None:
+        with open(args.exclusion_file_path, "r") as f:
+            sites_to_ignore = f.readlines()
+            sites_to_ignore = [s.strip().lower() for s in sites_to_ignore]
+        print("  %s site(s) loaded from the exclusion file." % len(sites_to_ignore))
+    else:
+        print("  No exclusion file specified so all sites will be processed.")
     print(colored("[*] Process the first %s sites available from the CISCO sites using %s threads in parallel..." % (args.site_limit, args.worker_thread_max), "cyan", attrs=[]))
     with open(args.site_file_path, "r") as f:
         csv_lines = f.readlines()
@@ -98,10 +107,11 @@ if __name__ == "__main__":
         count = 0
         for csv_line in csv_lines:
             site_url_to_use = csv_line.split(",")[1].strip()
-            executor.submit(process_site, site_url_to_use, WORK_TEMP_FOLDER)
-            count += 1
-            if count >= args.site_limit:
-                break
+            if site_url_to_use.lower() not in sites_to_ignore:
+                executor.submit(process_site, site_url_to_use, WORK_TEMP_FOLDER)
+                count += 1
+                if count >= args.site_limit:
+                    break
     print()
     print(colored("[*] Gather the information and build the final dictionary...", "cyan", attrs=[]))
     entries = {}  # we build the dict by putting in the top of the list the top most DISALLOW entries found
