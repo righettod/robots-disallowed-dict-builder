@@ -23,3 +23,4 @@ jobs:
         wget http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
         unzip top-1m.csv.zip
         python dict_builder.py -n 20 -t 5 -f top-1m.csv -m 3 -a "Mozilla/5.0"
+        ls -l disallowed_entries_dict.txt
