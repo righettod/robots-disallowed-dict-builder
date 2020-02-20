@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/righettod/robots-disallowed-dict-builder.svg?branch=master)](https://travis-ci.org/righettod/robots-disallowed-dict-builder)
-
 [![Requirements Status](https://requires.io/github/righettod/robots-disallowed-dict-builder/requirements.svg?branch=master)](https://requires.io/github/righettod/robots-disallowed-dict-builder/requirements/?branch=master)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/righettod/robots-disallowed-dict-builder/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/righettod/robots-disallowed-dict-builder?targetFile=requirements.txt)
+
+![Test application running state](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Test%20application%20running%20state/badge.svg)
 
 # Objective
 
