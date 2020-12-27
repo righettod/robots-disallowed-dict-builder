@@ -24,6 +24,8 @@ jobs:
         wc -l disallowed_entries_dict.txt
         rm top-1m.csv.zip
         rm top-1m.csv
+        git config --global user.email "github-action-job@github.com"
+        git config --global user.name "GitHubActionJob"
         git commit -m "Update version with freshly generated content." disallowed_entries_dict.txt
         git push
 
