@@ -2,7 +2,9 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/righettod/robots-disallowed-dict-builder/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/righettod/robots-disallowed-dict-builder?targetFile=requirements.txt)
 
-![Test application running state](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Test%20application%20running%20state/badge.svg)
+![Test application running state](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Test%20application%20running%20state/badge.svg?branch=master)
+
+![Generate dictionary](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Generate%20dictionary/badge.svg?branch=master)
 
 # Objective
 
