@@ -18,6 +18,10 @@ To resume, the script generate a dictionary containing the most common **DISALLO
 
 The built dictionary can then be used used with this [discovery tool](https://github.com/maurosoria/dirsearch) to find hidden content on a target web site.
 
+# Release
+
+:information_source: The file **[disallowed_entries_dict.txt](disallowed_entries_dict.txt)** is updated every week by this GitHub action [workflow](.github/workflows/generate-dict.yml).
+
 # Requirements
 
 ## Python
