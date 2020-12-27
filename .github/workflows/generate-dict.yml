@@ -22,4 +22,8 @@ jobs:
         unzip top-1m.csv.zip
         python dict_builder.py -n 10000 -t 20 -f top-1m.csv -m 5 -a "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
         wc -l disallowed_entries_dict.txt
+        rm top-1m.csv.zip
+        rm top-1m.csv
+        git commit -m "Update version with freshly generated content." disallowed_entries_dict.txt
+        git push
 
