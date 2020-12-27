@@ -1,4 +1,4 @@
-name: Generate-Dict
+name: Generate dictionary
 on:
   push:
     branches: [ master ]
