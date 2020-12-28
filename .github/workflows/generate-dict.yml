@@ -20,7 +20,7 @@ jobs:
       run: |
         wget -q http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip
         unzip top-1m.csv.zip
-        python dict_builder.py -n 300000 -t 40 -f top-1m.csv -m 5 -a "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
+        python dict_builder.py -n 450000 -t 40 -f top-1m.csv -m 5 -a "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
         wc -l disallowed_entries_dict.txt
         rm top-1m.csv.zip
         rm top-1m.csv
