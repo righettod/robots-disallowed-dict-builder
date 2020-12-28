@@ -41,7 +41,7 @@ def process_site(url, work_folder):
         lines = robot_content.split("\n")
         for r_line in lines:
             r_line_tmp = r_line.strip()
-            if r_line_tmp.startswith("Disallow:"):
+            if r_line_tmp.startswith("Disallow:") and "*" not in r_line_tmp:
                 selected_entries += r_line_tmp.replace("Disallow:", "").strip() + "\n"
     if len(selected_entries) > 0:
         with open(work_folder + "/" + hashlib.md5(url.encode("utf-8")).hexdigest() + ".txt", "w") as r_file:
