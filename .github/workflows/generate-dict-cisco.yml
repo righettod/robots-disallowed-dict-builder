@@ -1,4 +1,4 @@
-name: Generate dictionary
+name: Generate dictionary using CISCO file
 on:
   workflow_dispatch:
   schedule:
