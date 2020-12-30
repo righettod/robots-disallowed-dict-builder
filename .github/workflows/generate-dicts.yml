@@ -25,9 +25,9 @@ jobs:
         cat top-1m.csv | awk -F  "," 'NR>1 {print "0," $2}' > D1.csv
         cat input.csv | awk -F  "," 'NR>1 {print "0," $2}' > D2.csv
         cat D1.csv D2.csv | sort -u > data.csv
-        rm top-1m.csv.zip top-1m.csv majestic_million.csv D1.csv D2.csv
-        head -1000000 source.csv > part1.csv
-        tail -1000000 source.csv > part2.csv
+        head -1000000 data.csv > part1.csv
+        tail -1000000 data.csv > part2.csv
+        rm top-1m.csv.zip top-1m.csv majestic_million.csv D1.csv D2.csv data.csv
     - name: Generate the dict using PART1 to stay under 6H
       run: |
         python dict_builder.py -n 1000000 -t 100 -f part1.csv -m 5 -a "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
@@ -40,7 +40,9 @@ jobs:
         mv disallowed_entries_dict.txt part2.txt
     - name: Commit and push the generated content
       run: |
+        rm part1.csv part2.csv
         cat part1.txt part2.txt > disallowed_entries_dict.txt
+        ls -l
         git config --global user.email "github-action-job@github.com"
         git config --global user.name "GitHubActionJob"
         git commit -m "Update version with freshly generated content." disallowed_entries_dict.txt
