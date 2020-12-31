@@ -4,7 +4,7 @@
 
 ![Test application running state](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Test%20application%20running%20state/badge.svg?branch=master)
 
-![Generate dictionary](![Generate dictionaries for CISCO and MAJESTIC sources](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Generate%20dictionaries%20for%20CISCO%20and%20MAJESTIC%20sources/badge.svg?branch=master))
+![Generate dictionaries for CISCO and MAJESTIC sources](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Generate%20dictionaries%20for%20CISCO%20and%20MAJESTIC%20sources/badge.svg?branch=master)
 
 # Objective
 
