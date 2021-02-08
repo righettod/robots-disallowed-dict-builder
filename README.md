@@ -4,8 +4,6 @@
 
 ![Test application running state](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Test%20application%20running%20state/badge.svg?branch=master)
 
-![Generate dictionaries for CISCO and MAJESTIC sources](https://github.com/righettod/robots-disallowed-dict-builder/workflows/Generate%20dictionaries%20for%20CISCO%20and%20MAJESTIC%20sources/badge.svg?branch=master)
-
 # Objective
 
 This project provide a simple script highly inspired from [this project](https://github.com/danielmiessler/RobotsDisallowed).
@@ -17,12 +15,6 @@ Python portage has been created in order to be able to build the dictionary on W
 To resume, the script generate a dictionary containing the most common **DISALLOW** clauses from [robots.txt](https://moz.com/learn/seo/robotstxt) file found on CISCO Top 1 million sites.
 
 The built dictionary can then be used used with this [discovery tool](https://github.com/maurosoria/dirsearch) to find hidden content on a target web site.
-
-# Release
-
-:information_source: The file **[disallowed_entries_dict.txt](disallowed_entries_dict.txt)** is updated every week by this GitHub action [workflow](.github/workflows/generate-dicts.yml).
-
-The generated dictionary is based on the combination of the CISCO and MAJESTIC files.
 
 # Requirements
 
