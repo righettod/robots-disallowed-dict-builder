@@ -46,6 +46,7 @@ def process_site(url, work_folder):
     if len(selected_entries) > 0:
         with open(work_folder + "/" + hashlib.md5(url.encode("utf-8")).hexdigest() + ".txt", "w") as r_file:
             r_file.write(selected_entries)
+    print(f"[OK]: {url} - {len(selected_entries)} entries extracted.")
 
 
 
