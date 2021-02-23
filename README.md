@@ -98,6 +98,9 @@ sxajk.com
 kasya.net
 76236osm1.ru
 xjpakmdcfuqe.com
+xjpakmdcfuqe.biz
+xjpakmdcfuqe.in
+xjpakmdcfuqe.nl
 ``` 
 
 # Exclude sites from the processing
