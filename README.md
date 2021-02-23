@@ -103,6 +103,16 @@ xjpakmdcfuqe.in
 xjpakmdcfuqe.nl
 ``` 
 
+```shell
+# Search in CISCO + MAJESTIC CSV files
+$ grep -iE "(sxajk\.com|kasya\.net|76236osm1\.ru|xjpakmdcfuqe)" *.csv
+top-1m.csv:29938,76236osm1.ru
+top-1m.csv:788210,xjpakmdcfuqe.biz
+top-1m.csv:835376,xjpakmdcfuqe.in
+top-1m.csv:879009,sxajk.com
+top-1m.csv:894535,xjpakmdcfuqe.nl
+```
+
 # Exclude sites from the processing
 
 The `-e` option can be used to specify a text file containing a list of sites to ignore (one site by line).
