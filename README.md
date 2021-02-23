@@ -89,6 +89,15 @@ $ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3 -a "Mozilla/5.0"
 [!] Dictionary built in file 'disallowed_entries_dict.txt' (217 entries).
 ```
 
+# Malicious domains contained in source files
+
+The following domain were identified as linked to malicious activities so they were added to the [exclusions](exclusions.txt) file:
+
+```
+76236osm1.ru
+xjpakmdcfuqe.com
+``` 
+
 # Exclude sites from the processing
 
 The `-e` option can be used to specify a text file containing a list of sites to ignore (one site by line).
