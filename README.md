@@ -94,6 +94,8 @@ $ python dict_builder.py -n 100 -t 5 -f top-1m.csv -m 3 -a "Mozilla/5.0"
 The following domain were identified as linked to malicious activities so they were added to the [exclusions](exclusions.txt) file:
 
 ```
+sxajk.com
+kasya.net
 76236osm1.ru
 xjpakmdcfuqe.com
 ``` 
