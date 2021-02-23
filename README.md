@@ -126,8 +126,6 @@ doubleclick.net
 g.doubleclick.net
 ````
 
-The file `exclusions.txt` is provided with sites identified as malicious and, so, that should be ignored.
-
 # Use MAJESTIC sites list instead of the CISCO one
 
 Run the following command to build a dictionary using the [MAJESTIC Top 1 million sites list](https://blog.majestic.com/development/majestic-million-csv-daily/):
